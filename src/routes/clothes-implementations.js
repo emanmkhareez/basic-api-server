@@ -13,6 +13,7 @@ async function getclothes(req, res) {
     res.status(200).json(clothes);
 }
 
+
 async function getAllclothes(req, res) {
     let all = await clothes.findAll();
     res.status(200).json(all);

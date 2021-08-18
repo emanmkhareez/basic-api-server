@@ -3,19 +3,19 @@
 
 const express = require('express');
 const app = express();
-
-const notFoundHandler = require('./src/error-handlers/404');
-const errorHandler = require('./src/error-handlers/500');
+app.use(express.json())
+const notFoundHandler = require('./error-handlers/404');
+const errorHandler = require('./error-handlers/500');
 const loggerMeddleware = require('./src/middleware/logger');
 
 const clothesRoute = require('./src/routes/clothes');
 
-const foodRouts = require('./src/routes/clothes');
+const foodRouts = require('./routes/food-implementations');
 
 app.use(express.json());
 app.use(loggerMeddleware);
 app.use(clothesRoute);
-app.use(foodRouts);
+
 
 app.use('*', notFoundHandler);
 app.use(errorHandler);

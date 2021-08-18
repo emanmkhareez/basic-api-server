@@ -1,5 +1,8 @@
-const {  food } = require('../models');
+// const {  food } = require('../models');
 
+// const express = require('express');
+// const router = express();
+// router.post('/',createFood);
 
 async function createfood(req, res) {
     let foodInfo = req.body;
@@ -18,6 +21,11 @@ async function getAllfood(req, res) {
     res.status(200).json(all);
 }
 
+function createFood(req, res) {
+    const Obj = food.create(req.body);
+    res.json(Obj);
+};
+
 async function updatefood(req, res) {
     const id = parseInt(req.params.id);
     let foodInfo = req.body;
@@ -34,7 +42,7 @@ async function deletefood(req, res) {
 }
 
 module.exports = {
-    createfood,
+    // createfood,
     getfood,
     getAllfood,
     updatefood,

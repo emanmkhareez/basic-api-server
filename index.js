@@ -9,3 +9,8 @@ db.sync()
         server.start(3000);
     })
     .catch(console.error);
+'use strict';
+
+const server = require('./src/server');
+//the port should be from the .evn file
+server.start(3000);
