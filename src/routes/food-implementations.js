@@ -1,19 +1,17 @@
-// const {  food } = require('../models');
+const {  food } = require('../models');
 
-// const express = require('express');
-// const router = express();
-// router.post('/',createFood);
+
 
 async function createfood(req, res) {
     let foodInfo = req.body;
-    let food = await food.create(foodInfo);
-    res.status(201).json(food);
+    let food2 = await food.create(foodInfo);
+    res.status(201).json(food2);
 }
 
 async function getfood(req, res) {
     const id = parseInt(req.params.id);
-    let food = await food.findOne({ where: { id: id } });
-    res.status(200).json(food);
+    let food2 = await food.findOne({ where: { id: id } });
+    res.status(200).json(food2);
 }
 
 async function getAllfood(req, res) {
@@ -21,17 +19,14 @@ async function getAllfood(req, res) {
     res.status(200).json(all);
 }
 
-function createFood(req, res) {
-    const Obj = food.create(req.body);
-    res.json(Obj);
-};
+
 
 async function updatefood(req, res) {
     const id = parseInt(req.params.id);
     let foodInfo = req.body;
 
-    let food = await food.findOne({ where: { id } });
-    let updatefood = await food.update(foodInfo);
+    let food2 = await food.findOne({ where: { id } });
+    let updatefood = await food2.update(foodInfo);
     res.status(200).json(updatefood);
 }
 
@@ -41,8 +36,10 @@ async function deletefood(req, res) {
     res.status(204).json(deletefood);
 }
 
+
+
 module.exports = {
-    // createfood,
+    createfood,
     getfood,
     getAllfood,
     updatefood,

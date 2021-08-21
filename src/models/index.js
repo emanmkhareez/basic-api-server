@@ -1,8 +1,8 @@
-const POSTGRES_URI = process.env.POSTGRES_URI || 'postgres://localhost/asac401';
+const POSTGRES_URI = process.env.POSTGRES_URI ||  "postgres://postgres@localhost:5432/postgres";
 const { Sequelize, DataTypes } = require('sequelize');
 
-const food = require('./food.model');
-const clothes=require('./clothes.model')
+const food = require('./food');
+const clothes=require('./clothes')
 
 var sequelize = new Sequelize(POSTGRES_URI, {});
 
@@ -11,3 +11,5 @@ module.exports = {
     food: food(sequelize, DataTypes),
     clothes:clothes(sequelize,DataTypes)
 }
+
+
