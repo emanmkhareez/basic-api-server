@@ -13,6 +13,12 @@ const clothesRoute = require('./routes/clothes');
 const foodRouts = require('./routes/food');
 
 
+
+
+
+
+
+
 app.use(express.json());
 app.use(loggerMeddleware);
 app.use(clothesRoute);
