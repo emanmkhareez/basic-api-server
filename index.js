@@ -5,13 +5,14 @@
 const { db } = require('./src/models/index.js');
 const server = require('./src/server');
 //the port should be from the .evn file
+
+
+
 db.sync()
     .then(() => {
-        server.start(3000);
+        server.start(3001);
     })
     .catch(console.error);
-
-
     var pg = require('pg');
     //or native libpq bindings
     //var pg = require('pg').native

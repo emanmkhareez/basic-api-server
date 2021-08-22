@@ -1,6 +1,7 @@
-const POSTGRES_URI = process.env.POSTGRES_URI ||  "postgres://postgres@localhost:5432/postgres";
-const { Sequelize, DataTypes } = require('sequelize');
 require('dotenv').config()
+const POSTGRES_URI = `${process.env.POSTGRES_URI}`
+const { Sequelize, DataTypes } = require('sequelize');
+
 const food = require('./food');
 const clothes=require('./clothes')
 
