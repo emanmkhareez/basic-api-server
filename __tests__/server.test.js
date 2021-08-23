@@ -29,7 +29,7 @@ it('put methd ', async() =>{
         foodname: 'Pizza',
         foodtype: 'Pizza Hut'
       };
-      const response = await request.put(`/food/4`).send(Obj);
+      const response = await request.put(`/food/7`).send(Obj);
       expect(response.status).toEqual(200);
       expect(response.body.foodname).toBe(Obj.foodname)
   expect(response.body.foodtype).toBe(Obj.foodtype)
